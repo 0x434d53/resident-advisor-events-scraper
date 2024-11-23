@@ -13,7 +13,7 @@ HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
 }
 QUERY_TEMPLATE_PATH = "graphql_query_template.json"
-DELAY = 1  # Adjust this value as needed
+DELAY = 2  # Adjust this value as needed
 
 
 class EventFetcher:
@@ -112,11 +112,14 @@ class EventFetcher:
 
         while True:
             events = self.get_events(page_number)
+            date = self.payload["variables"]["filters"]["listingDate"]["gte"]
 
             if not events:
                 break
 
             all_events.extend(events)
+            print(f"Date {date} Fetched page {page_number}, Overall {len(all_events)} events")
+
             page_number += 1
             time.sleep(DELAY)
 
@@ -157,12 +160,19 @@ def main():
     all_events = []
     current_start_date = datetime.strptime(args.start_date, "%Y-%m-%d")
 
+    progress = True
+
     while current_start_date <= datetime.strptime(args.end_date, "%Y-%m-%d"):
         listing_date_gte = current_start_date.strftime("%Y-%m-%dT00:00:00.000Z")
         event_fetcher.payload = event_fetcher.generate_payload(args.areas, listing_date_gte, listing_date_lte)
         events = event_fetcher.fetch_all_events()
         all_events.extend(events)
         current_start_date += timedelta(days=len(events))
+        if progress == False and len(events) == 0:
+            break
+        progress = len(events) > 0
+
+
 
     event_fetcher.save_events_to_csv(all_events, args.output)
 
