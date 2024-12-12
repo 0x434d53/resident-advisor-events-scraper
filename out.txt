@@ -1,0 +1,2189 @@
+{
+    "operationName": "GET_DEFAULT_EVENTS_LISTING",
+    "variables": {
+        "indices": [
+            "EVENT"
+        ],
+        "pageSize": 20,
+        "page": 5,
+        "aggregations": [
+            "YEAR",
+            "COUNTRY"
+        ],
+        "filters": [
+            {
+                "type": "ARTIST",
+                "value": "54309"
+            },
+            {
+                "type": "DATERANGE",
+                "value": "{\"lt\":\"2024-12-11T23:11:00.000Z\"}"
+            }
+        ],
+        "sortOrder": "DESCENDING",
+        "sortField": "EVENTDATE",
+        "baseFilters": [
+            {
+                "type": "ARTIST",
+                "value": "54309"
+            },
+            {
+                "type": "DATERANGE",
+                "value": "{\"lt\":\"2024-12-11T23:11:00.000Z\"}"
+            }
+        ]
+    },
+    "query": "query GET_DEFAULT_EVENTS_LISTING($indices: [IndexType!], $aggregations: [ListingAggregationType!], $filters: [FilterInput], $pageSize: Int, $page: Int, $sortField: FilterSortFieldType, $sortOrder: FilterSortOrderType, $baseFilters: [FilterInput]) {\n  listing(\n    indices: $indices\n    aggregations: []\n    filters: $filters\n    pageSize: $pageSize\n    page: $page\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    data {\n      ...eventFragment\n      __typename\n    }\n    totalResults\n    __typename\n  }\n  aggregations: listing(\n    indices: $indices\n    aggregations: $aggregations\n    filters: $baseFilters\n    pageSize: 0\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    aggregations {\n      type\n      values {\n        value\n        name\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment eventFragment on Event {\n  id\n  title\n  interestedCount\n  isSaved\n  isInterested\n  date\n  startTime\n  contentUrl\n  queueItEnabled\n  flyerFront\n  newEventForm\n  images {\n    id\n    filename\n    alt\n    type\n    crop\n    __typename\n  }\n  artists {\n    id\n    name\n    __typename\n  }\n  venue {\n    id\n    name\n    contentUrl\n    live\n    area {\n      id\n      name\n      urlName\n      country {\n        id\n        name\n        urlCode\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  __typename\n}\n"
+}
+{
+    "operationName": "GET_DEFAULT_EVENTS_LISTING",
+    "variables": {
+        "indices": [
+            "EVENT"
+        ],
+        "pageSize": 20,
+        "page": 5,
+        "aggregations": [
+            "YEAR",
+            "COUNTRY"
+        ],
+        "filters": [
+            {
+                "type": "ARTIST",
+                "value": "54309"
+            },
+            {
+                "type": "DATERANGE",
+                "value": "{\"lt\":\"2024-12-11T23:11:00.000Z\"}"
+            }
+        ],
+        "sortOrder": "DESCENDING",
+        "sortField": "EVENTDATE",
+        "baseFilters": [
+            {
+                "type": "ARTIST",
+                "value": "54309"
+            },
+            {
+                "type": "DATERANGE",
+                "value": "{\"lt\":\"2024-12-11T23:11:00.000Z\"}"
+            }
+        ]
+    },
+    "query": "query GET_DEFAULT_EVENTS_LISTING($indices: [IndexType!], $aggregations: [ListingAggregationType!], $filters: [FilterInput], $pageSize: Int, $page: Int, $sortField: FilterSortFieldType, $sortOrder: FilterSortOrderType, $baseFilters: [FilterInput]) {\n  listing(\n    indices: $indices\n    aggregations: []\n    filters: $filters\n    pageSize: $pageSize\n    page: $page\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    data {\n      ...eventFragment\n      __typename\n    }\n    totalResults\n    __typename\n  }\n  aggregations: listing(\n    indices: $indices\n    aggregations: $aggregations\n    filters: $baseFilters\n    pageSize: 0\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    aggregations {\n      type\n      values {\n        value\n        name\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment eventFragment on Event {\n  id\n  title\n  interestedCount\n  isSaved\n  isInterested\n  date\n  startTime\n  contentUrl\n  queueItEnabled\n  flyerFront\n  newEventForm\n  images {\n    id\n    filename\n    alt\n    type\n    crop\n    __typename\n  }\n  artists {\n    id\n    name\n    __typename\n  }\n  venue {\n    id\n    name\n    contentUrl\n    live\n    area {\n      id\n      name\n      urlName\n      country {\n        id\n        name\n        urlCode\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  __typename\n}\n"
+}
+{
+    "data": {
+        "listing": {
+            "data": [
+                {
+                    "id": "2054548",
+                    "title": "Different Spaces: Parallx",
+                    "interestedCount": 4,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-12-07T00:00:00.000",
+                    "startTime": "2024-12-07T23:00:00.000",
+                    "contentUrl": "/events/2054548",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "2045319",
+                            "filename": "https://images.ra.co/e2ccb945cd4275cbad0ea7116004f15830b06a53.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "150355",
+                        "name": "KALT",
+                        "contentUrl": "/clubs/150355",
+                        "live": true,
+                        "area": {
+                            "id": "615",
+                            "name": "Strasbourg",
+                            "urlName": "strasbourg",
+                            "country": {
+                                "id": "15",
+                                "name": "France",
+                                "urlCode": "FR",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "2036147",
+                    "title": "The last SYNOID Weekender at RSO",
+                    "interestedCount": 2358,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-12-06T00:00:00.000",
+                    "startTime": "2024-12-06T23:00:00.000",
+                    "contentUrl": "/events/2036147",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "2024633",
+                            "filename": "https://images.ra.co/1ffcced55c0b9dff1e61cb42bded3297e8356fa1.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        },
+                        {
+                            "id": "2050008",
+                            "filename": "https://images.ra.co/e2852f26789a09874651d4efe27dd49aa68eec13.png",
+                            "alt": null,
+                            "type": "FLYERBACK",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "94289",
+                            "name": "A Strange Wedding",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "47663",
+                            "name": "Acierate",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "84884",
+                            "name": "Afra",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "82053",
+                            "name": "Alva",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "28361",
+                            "name": "Antigone",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "118628",
+                            "name": "AYLIN IDAH",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "113583",
+                            "name": "Kim She",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "29558",
+                            "name": "Benjamin Damage",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "102565",
+                            "name": "Blame The Mono",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "63882",
+                            "name": "Hadone",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "100103",
+                            "name": "UFO95",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "79478",
+                            "name": "Crystal Geometry",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "102026",
+                            "name": "Disguised",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "83975",
+                            "name": "F\u00e9licie",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "139397",
+                            "name": "GLASSBASS",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "106328",
+                            "name": "Lucia Lu",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "55089",
+                            "name": "Lucinee",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "79756",
+                            "name": "madwoman",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "104554",
+                            "name": "Matriark",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "52053",
+                            "name": "My Gander",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "47173",
+                            "name": "Messiahwaits",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "109093",
+                            "name": "Nina Farrina",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "2048",
+                            "name": "Perc",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "19589",
+                            "name": "Randomer",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "110195",
+                            "name": "S\u00e1nchez Jr.",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "129785",
+                            "name": "Sioc",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "233",
+                            "name": "Slam",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "92327",
+                            "name": "Stina Francina",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "47069",
+                            "name": "UVB",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "65514",
+                            "name": "Xiorro",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "185172",
+                        "name": "RSO.BERLIN",
+                        "contentUrl": "/clubs/185172",
+                        "live": true,
+                        "area": {
+                            "id": "34",
+                            "name": "Berlin",
+                            "urlName": "berlin",
+                            "country": {
+                                "id": "12",
+                                "name": "Germany",
+                                "urlCode": "DE",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": {
+                        "id": "37673",
+                        "blurb": "Hours and hours and hours of mind-bending, stomach-churning techno and trance. Not for the faint-hearted.",
+                        "__typename": "EventPick"
+                    },
+                    "__typename": "Event"
+                },
+                {
+                    "id": "2018380",
+                    "title": "Sonic: Parallx (DE), Blame The Mono (FR), Nina Farrina b2b 3ever, Miss Carriage",
+                    "interestedCount": 183,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-11-22T00:00:00.000",
+                    "startTime": "2024-11-22T23:00:00.000",
+                    "contentUrl": "/events/2018380",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1994106",
+                            "filename": "https://images.ra.co/4ee81c41ecf2b728ffb2e52409dd08bb672069f3.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "102565",
+                            "name": "Blame The Mono",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "109093",
+                            "name": "Nina Farrina",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "107221",
+                            "name": "3ever",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "111125",
+                            "name": "NEW MAGIC MEDIA",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "134213",
+                            "name": "Miss Carriage",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "162121",
+                        "name": "Fuchs2",
+                        "contentUrl": "/clubs/162121",
+                        "live": true,
+                        "area": {
+                            "id": "451",
+                            "name": "Prague",
+                            "urlName": "prague",
+                            "country": {
+                                "id": "49",
+                                "name": "Czech Republic",
+                                "urlCode": "CZ",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "2011862",
+                    "title": "RSO YEAR THREE w Bambounou, Nene H, Schacke, Laure Croft, MCMLXXXV, DJ MELL G, Jennifer Cardini",
+                    "interestedCount": 2394,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-11-16T00:00:00.000",
+                    "startTime": "2024-11-16T23:59:00.000",
+                    "contentUrl": "/events/2011862",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1998733",
+                            "filename": "https://images.ra.co/080ff9b969d00c56dc5d058e24ef0d5a2d2ed6cf.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "36137",
+                            "name": "Bambounou",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "73401",
+                            "name": "Colin Benders",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "103810",
+                            "name": "Laure Croft",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "70435",
+                            "name": "MCMLXXXV",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "86508",
+                            "name": "Dj Saliva",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "77263",
+                            "name": "Nene H",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "98165",
+                            "name": "Philippa Pacho",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "73341",
+                            "name": "Schacke",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "99614",
+                            "name": "DJ MELL G",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "76923",
+                            "name": "GAEL",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "42221",
+                            "name": "ISAbella",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "62286",
+                            "name": "JASSS",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "699",
+                            "name": "Jennifer Cardini",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "56549",
+                            "name": "Pa\u00e0l",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "99054",
+                            "name": "RONI",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "57269",
+                            "name": "TITIA",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "185172",
+                        "name": "RSO.BERLIN",
+                        "contentUrl": "/clubs/185172",
+                        "live": true,
+                        "area": {
+                            "id": "34",
+                            "name": "Berlin",
+                            "urlName": "berlin",
+                            "country": {
+                                "id": "12",
+                                "name": "Germany",
+                                "urlCode": "DE",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": {
+                        "id": "36718",
+                        "blurb": "RSO celebrates its three-year anniversary with an extraordinary lineup, featuring a live show from Colin Benders and DJ sets courtesy of Bambounou, Nene H, DJ MELL G and many more besides.",
+                        "__typename": "EventPick"
+                    },
+                    "__typename": "Event"
+                },
+                {
+                    "id": "2024862",
+                    "title": "DNA with RIKHTER + Parallx + Pablo Bozzi + BROOKLYN49",
+                    "interestedCount": 16,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-11-01T00:00:00.000",
+                    "startTime": "2024-11-01T23:00:00.000",
+                    "contentUrl": "/events/2024862",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "2005086",
+                            "filename": "https://images.ra.co/488a5280bbca15386ca818111fb96e4f9db90f60.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "97480",
+                            "name": "RIKHTER",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "100852",
+                            "name": "Pablo Bozzi",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "106673",
+                            "name": "Exil der Schatten",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "225369",
+                        "name": "DNA Club",
+                        "contentUrl": "/clubs/225369",
+                        "live": true,
+                        "area": {
+                            "id": "151",
+                            "name": "Munich",
+                            "urlName": "munich",
+                            "country": {
+                                "id": "12",
+                                "name": "Germany",
+                                "urlCode": "DE",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "2007221",
+                    "title": "OXID x MUTABOR w/ Parallx, Acierate and many more ",
+                    "interestedCount": 136,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-26T00:00:00.000",
+                    "startTime": "2024-10-26T21:00:00.000",
+                    "contentUrl": "/events/2007221",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "2005710",
+                            "filename": "https://images.ra.co/f7ff9807dfbad13e22ec944f813686ecaa1d2366.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "47663",
+                            "name": "Acierate",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "113294",
+                            "name": "Jaszaloth",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "124984",
+                            "name": "Meyhartt",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "150029",
+                            "name": "Jatra",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "151559",
+                            "name": "TRIT\u00d8NUS",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "123493",
+                            "name": "SLANY",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "155515",
+                        "name": "Westhafen",
+                        "contentUrl": "/clubs/155515",
+                        "live": true,
+                        "area": {
+                            "id": "149",
+                            "name": "Leipzig",
+                            "urlName": "leipzig",
+                            "country": {
+                                "id": "12",
+                                "name": "Germany",
+                                "urlCode": "DE",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1995686",
+                    "title": "Hideout with Parallx & RIKHTER",
+                    "interestedCount": 5,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-25T00:00:00.000",
+                    "startTime": "2024-10-25T23:00:00.000",
+                    "contentUrl": "/events/1995686",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1963063",
+                            "filename": "https://images.ra.co/7314613a28fac4bc122abe02914a749222900387.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "97480",
+                            "name": "RIKHTER",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "8280",
+                        "name": "Nordstern",
+                        "contentUrl": "/clubs/8280",
+                        "live": true,
+                        "area": {
+                            "id": "391",
+                            "name": "Basel",
+                            "urlName": "basel",
+                            "country": {
+                                "id": "27",
+                                "name": "Switzerland",
+                                "urlCode": "CH",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1999304",
+                    "title": "ALTEREGO with Parallx",
+                    "interestedCount": 5,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-19T00:00:00.000",
+                    "startTime": "2024-10-19T23:00:00.000",
+                    "contentUrl": "/events/1999304",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1967883",
+                            "filename": "https://images.ra.co/7547cf8d9ab2b5ef0ce7a34b8ad202f3f77bc720.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        },
+                        {
+                            "id": "1967882",
+                            "filename": "https://images.ra.co/0353da555721a1234b42316f8337eff6e2734366.png",
+                            "alt": null,
+                            "type": "FLYERBACK",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "114373",
+                            "name": "Deeda",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "92340",
+                        "name": "Drugstore Beograd",
+                        "contentUrl": "/clubs/92340",
+                        "live": true,
+                        "area": {
+                            "id": "562",
+                            "name": "Belgrade",
+                            "urlName": "belgrade",
+                            "country": {
+                                "id": "38",
+                                "name": "Serbia",
+                                "urlCode": "RS",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1964201",
+                    "title": "CONGREGATE - ADE",
+                    "interestedCount": 34,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-16T00:00:00.000",
+                    "startTime": "2024-10-16T22:00:00.000",
+                    "contentUrl": "/events/1964201",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1925461",
+                            "filename": "https://images.ra.co/8fe0900b91ceba39064fd9e64ee4b723c23fc81e.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "67374",
+                            "name": "Frazi.er",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "77182",
+                            "name": "Somniac One",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "70648",
+                            "name": "Ghost in the Machine",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54490",
+                            "name": "STRISC.",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "134523",
+                            "name": "TRAFFK",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "66507",
+                        "name": "H7 Warehouse",
+                        "contentUrl": "/clubs/66507",
+                        "live": true,
+                        "area": {
+                            "id": "29",
+                            "name": "Amsterdam",
+                            "urlName": "amsterdam",
+                            "country": {
+                                "id": "6",
+                                "name": "Netherlands",
+                                "urlCode": "NL",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1990309",
+                    "title": "Techno Snobs presents: RIKHTER + Parallx",
+                    "interestedCount": 11,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-12T00:00:00.000",
+                    "startTime": "2024-10-12T23:00:00.000",
+                    "contentUrl": "/events/1990309",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1955637",
+                            "filename": "https://images.ra.co/9c8a4e6370a428a66b2d62dd90f73ff3a21442e7.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "97480",
+                            "name": "RIKHTER",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "241683",
+                        "name": "TBA - Phoenix ",
+                        "contentUrl": null,
+                        "live": false,
+                        "area": {
+                            "id": "591",
+                            "name": "Phoenix",
+                            "urlName": "phoenix",
+                            "country": {
+                                "id": "2",
+                                "name": "United States of America",
+                                "urlCode": "US",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1851808",
+                    "title": "WORK x Doom present: Parallx, RIKHTER, Death Simulator, & Lanat",
+                    "interestedCount": 294,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-11T00:00:00.000",
+                    "startTime": "2024-10-11T23:00:00.000",
+                    "contentUrl": "/events/1851808",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1894687",
+                            "filename": "https://images.ra.co/b50372854f40c5021ac0081468a5fb93b5316987.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "97480",
+                            "name": "RIKHTER",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "111518",
+                            "name": "Death Simulator",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "143638",
+                            "name": "Lanat",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "193995",
+                        "name": "TBA - Los Angeles",
+                        "contentUrl": null,
+                        "live": false,
+                        "area": {
+                            "id": "23",
+                            "name": "Los Angeles",
+                            "urlName": "losangeles",
+                            "country": {
+                                "id": "2",
+                                "name": "United States of America",
+                                "urlCode": "US",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "2011503",
+                    "title": "Noreiner W/ RIKHTER & Parallx (R LABEL GROUP)",
+                    "interestedCount": 11,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-05T00:00:00.000",
+                    "startTime": "2024-10-05T22:30:00.000",
+                    "contentUrl": "/events/2011503",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1984759",
+                            "filename": "https://images.ra.co/b0cc9aa1e7cab165c6c8c9b8021b5783dac0d322.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "97480",
+                            "name": "RIKHTER",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "151019",
+                            "name": "ccil",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "207221",
+                        "name": "Sainte-Catherine Hall",
+                        "contentUrl": "/clubs/207221",
+                        "live": true,
+                        "area": {
+                            "id": "40",
+                            "name": "Montreal",
+                            "urlName": "montreal",
+                            "country": {
+                                "id": "7",
+                                "name": "Canada",
+                                "urlCode": "CA",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": {
+                        "id": "35694",
+                        "blurb": "Noreiner invites two global heavyweights of hard techno to Montreal for an evening of ruthless dance floor mayhem. ",
+                        "__typename": "EventPick"
+                    },
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1974472",
+                    "title": "Agape  PRESENTS: RIKHTER + Parallx  ( NYC DEBUTS )",
+                    "interestedCount": 264,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-10-04T00:00:00.000",
+                    "startTime": "2024-10-04T22:00:00.000",
+                    "contentUrl": "/events/1974472",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1933893",
+                            "filename": "https://images.ra.co/61cc87393633da7538bb7755e14a37c00737ec22.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "97480",
+                            "name": "RIKHTER",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "137550",
+                        "name": "H0L0",
+                        "contentUrl": "/clubs/137550",
+                        "live": true,
+                        "area": {
+                            "id": "8",
+                            "name": "New York City",
+                            "urlName": "newyorkcity",
+                            "country": {
+                                "id": "2",
+                                "name": "United States of America",
+                                "urlCode": "US",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1995178",
+                    "title": "Parallx en Brutal MX",
+                    "interestedCount": 61,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-09-28T00:00:00.000",
+                    "startTime": "2024-09-28T22:30:00.000",
+                    "contentUrl": "/events/1995178",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1962323",
+                            "filename": "https://images.ra.co/c53d4e3edc2dcaa3389715c0e1287c887dfa10cd.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "119374",
+                            "name": "Enya Botello",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "140794",
+                            "name": "Magnolia Coronado",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "127292",
+                            "name": "Cruz de Cal",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "141894",
+                            "name": "Tatiana Vaughan (2)",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "214718",
+                        "name": "Brutal Mx",
+                        "contentUrl": "/clubs/214718",
+                        "live": true,
+                        "area": {
+                            "id": "399",
+                            "name": "Mexico City",
+                            "urlName": "mexicocity",
+                            "country": {
+                                "id": "33",
+                                "name": "Mexico",
+                                "urlCode": "MX",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1994366",
+                    "title": "Into the Woods",
+                    "interestedCount": 25,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-09-20T00:00:00.000",
+                    "startTime": "2024-09-20T12:00:00.000",
+                    "contentUrl": "/events/1994366",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1961211",
+                            "filename": "https://images.ra.co/374b11aa3cf65e602a3de478f74d392e53e0962a.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "72685",
+                            "name": "AGY3NA",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "103515",
+                            "name": "Aldonna",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "78331",
+                            "name": "Angel D'lite",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "101213",
+                            "name": "Amaliah",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "81577",
+                            "name": "Anz",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "108837",
+                            "name": "Bae Blade",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "28169",
+                            "name": "MrD",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "109046",
+                            "name": "Benwal",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "109346",
+                            "name": "Boris Coelman",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "51054",
+                            "name": "Catching Flies",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "85915",
+                            "name": "Chlo\u00e9 Caillet",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "76212",
+                            "name": "Cynthia Spiering",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "64279",
+                            "name": "Grace Dahl",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "93941",
+                            "name": "DIEDE",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "134587",
+                            "name": "DJUS",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "103401",
+                            "name": "Doudou MD",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "85332",
+                            "name": "Dr Banana",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "1707",
+                            "name": "Einmusik",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "66618",
+                            "name": "ELMER",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "131265",
+                            "name": "Essy",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "102468",
+                            "name": "Estella Boersma",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "90391",
+                            "name": "Fais Le Beau",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "145777",
+                            "name": "Foghan",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "127812",
+                            "name": "Frasjan",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "65351",
+                            "name": "GHEIST",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "29027",
+                            "name": "H\u00e9ctor Oaks",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "36272",
+                            "name": "Huerta",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "70860",
+                            "name": "Ignez",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "96218",
+                            "name": "Juicy Romance",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "89078",
+                            "name": "Juliana",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "77474",
+                            "name": "KETTAMA",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "28513",
+                            "name": "Konstantin Sibold",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "103810",
+                            "name": "Laure Croft",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "105444",
+                            "name": "LEIA (1)",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "50379",
+                            "name": "Locklead",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "80448",
+                            "name": "Lori (1)",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "106788",
+                            "name": "Maara",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "103691",
+                            "name": "Mac Declos",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "87521",
+                            "name": "Marie Montexier",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "82863",
+                            "name": "Mees Salom\u00e9",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "113550",
+                            "name": "Mila Black",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "41419",
+                            "name": "Morgan",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "75729",
+                            "name": "Naone",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "85061",
+                            "name": "Ogaz\u00f3n",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "117719",
+                            "name": "Pegassi",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "2048",
+                            "name": "Perc",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "69854",
+                            "name": "Phara",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "97480",
+                            "name": "RIKHTER",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "108112",
+                            "name": "Rose Ringed",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "106354",
+                            "name": "Sam Alfred",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "146093",
+                            "name": "Sam Rose",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "79807",
+                            "name": "Selene",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "137925",
+                            "name": "Stef de Haan",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "120348",
+                            "name": "Storm Mollison",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "112808",
+                            "name": "Surf 2 Glory",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "114634",
+                            "name": "Susan Right",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "92982",
+                            "name": "T & Sugah",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "148748",
+                            "name": "TESRA",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "96633",
+                            "name": "THC",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "92873",
+                            "name": "Tjade",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "129196",
+                            "name": "Tonco",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "50071",
+                            "name": "Tsepo",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "118674",
+                            "name": "TWIENA",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "115142",
+                            "name": "Vera Moro",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "104249",
+                            "name": "Wallace",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "102751",
+                            "name": "Y\u00f2p",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "128577",
+                        "name": "Openluchttheater Amersfoort",
+                        "contentUrl": "/clubs/128577",
+                        "live": true,
+                        "area": {
+                            "id": "29",
+                            "name": "Amsterdam",
+                            "urlName": "amsterdam",
+                            "country": {
+                                "id": "6",
+                                "name": "Netherlands",
+                                "urlCode": "NL",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1988423",
+                    "title": "Graf Karl Summer Closing with Perc & Parallx",
+                    "interestedCount": 8,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-09-14T00:00:00.000",
+                    "startTime": "2024-09-14T15:00:00.000",
+                    "contentUrl": "/events/1988423",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1953599",
+                            "filename": "https://images.ra.co/1e1c500b3e67af135e8ac508ba9095f9e131ea46.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "2048",
+                            "name": "Perc",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "127843",
+                            "name": "DJ SPORTSCHUH",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "123675",
+                            "name": "5euroGoldi",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "118392",
+                            "name": "Melushka",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "149365",
+                            "name": "Vam\u00f8s",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "92482",
+                            "name": "JVN",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "123511",
+                            "name": "Hontas",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "148848",
+                            "name": "Montana",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "191253",
+                        "name": "Graf Karl",
+                        "contentUrl": "/clubs/191253",
+                        "live": true,
+                        "area": {
+                            "id": "233",
+                            "name": "Kassel",
+                            "urlName": "kassel",
+                            "country": {
+                                "id": "12",
+                                "name": "Germany",
+                                "urlCode": "DE",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1974201",
+                    "title": "THE GARAGE PRESENTS: ParallxS / Lucia Lu / KODAK / NIVAX",
+                    "interestedCount": 125,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-09-13T00:00:00.000",
+                    "startTime": "2024-09-13T23:59:00.000",
+                    "contentUrl": "/events/1974201",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1933545",
+                            "filename": "https://images.ra.co/c2684902fcb10d407364d32dadfe212713e32566.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "106328",
+                            "name": "Lucia Lu",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "163338",
+                        "name": "THE GARAGE CLUB BCN",
+                        "contentUrl": "/clubs/163338",
+                        "live": true,
+                        "area": {
+                            "id": "20",
+                            "name": "Barcelona",
+                            "urlName": "barcelona",
+                            "country": {
+                                "id": "5",
+                                "name": "Spain",
+                                "urlCode": "ES",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1988744",
+                    "title": "New Guernica & OCTANE Pres. Parallx (DE) - SUNDAY 8TH SEPTEMBER",
+                    "interestedCount": 4,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-09-08T00:00:00.000",
+                    "startTime": "2024-09-08T18:00:00.000",
+                    "contentUrl": "/events/1988744",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1953481",
+                            "filename": "https://images.ra.co/3ee6ab3b8f7775948e065606bc9bdc5e524266b9.png",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "145158",
+                            "name": "Josh Heywood",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "98230",
+                            "name": "Lisa May",
+                            "__typename": "Artist"
+                        },
+                        {
+                            "id": "97851",
+                            "name": "LUMERTZ",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "229131",
+                        "name": "New Guernica",
+                        "contentUrl": "/clubs/229131",
+                        "live": true,
+                        "area": {
+                            "id": "2",
+                            "name": "Melbourne",
+                            "urlName": "melbourne",
+                            "country": {
+                                "id": "1",
+                                "name": "Australia",
+                                "urlCode": "AU",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1987261",
+                    "title": "CLOSE CONTACT presents: Parallx (Berlin)",
+                    "interestedCount": 4,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-09-06T00:00:00.000",
+                    "startTime": "2024-09-06T22:00:00.000",
+                    "contentUrl": "/events/1987261",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1951381",
+                            "filename": "https://images.ra.co/719dd4033ef3b0630069b47436f4fbb00aa143ef.png",
+                            "alt": "flyer",
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "186607",
+                        "name": "Barbes",
+                        "contentUrl": "/clubs/186607",
+                        "live": true,
+                        "area": {
+                            "id": "3",
+                            "name": "Perth",
+                            "urlName": "perth",
+                            "country": {
+                                "id": "1",
+                                "name": "Australia",
+                                "urlCode": "AU",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                },
+                {
+                    "id": "1988773",
+                    "title": "Parallx",
+                    "interestedCount": 17,
+                    "isSaved": false,
+                    "isInterested": false,
+                    "date": "2024-09-05T00:00:00.000",
+                    "startTime": "2024-09-05T22:00:00.000",
+                    "contentUrl": "/events/1988773",
+                    "queueItEnabled": false,
+                    "flyerFront": null,
+                    "newEventForm": true,
+                    "images": [
+                        {
+                            "id": "1953527",
+                            "filename": "https://images.ra.co/224ffcb5ea18108e561abdd06a69a282668c4870.jpg",
+                            "alt": null,
+                            "type": "FLYERFRONT",
+                            "crop": null,
+                            "__typename": "EventImage"
+                        }
+                    ],
+                    "artists": [
+                        {
+                            "id": "54309",
+                            "name": "Parallx",
+                            "__typename": "Artist"
+                        }
+                    ],
+                    "venue": {
+                        "id": "237194",
+                        "name": "Walls",
+                        "contentUrl": "/clubs/237194",
+                        "live": true,
+                        "area": {
+                            "id": "543",
+                            "name": "Bali",
+                            "urlName": "bali",
+                            "country": {
+                                "id": "37",
+                                "name": "Indonesia",
+                                "urlCode": "ID",
+                                "__typename": "Country"
+                            },
+                            "__typename": "Area"
+                        },
+                        "__typename": "Venue"
+                    },
+                    "pick": null,
+                    "__typename": "Event"
+                }
+            ],
+            "totalResults": 333,
+            "__typename": "Listing"
+        },
+        "aggregations": {
+            "aggregations": [
+                {
+                    "type": "YEAR",
+                    "values": [
+                        {
+                            "value": "2024",
+                            "name": "2024",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2023",
+                            "name": "2023",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2022",
+                            "name": "2022",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2021",
+                            "name": "2021",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2020",
+                            "name": "2020",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2019",
+                            "name": "2019",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2018",
+                            "name": "2018",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2017",
+                            "name": "2017",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2016",
+                            "name": "2016",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "2015",
+                            "name": "2015",
+                            "__typename": "FilterValue"
+                        }
+                    ],
+                    "__typename": "Aggregation"
+                },
+                {
+                    "type": "COUNTRY",
+                    "values": [
+                        {
+                            "value": "ar",
+                            "name": "Argentina",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "au",
+                            "name": "Australia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "at",
+                            "name": "Austria",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "be",
+                            "name": "Belgium",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ca",
+                            "name": "Canada",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "cl",
+                            "name": "Chile",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "cn",
+                            "name": "China",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "co",
+                            "name": "Colombia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "cz",
+                            "name": "Czech Republic",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "dk",
+                            "name": "Denmark",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ec",
+                            "name": "Ecuador",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "fi",
+                            "name": "Finland",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "fr",
+                            "name": "France",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ge",
+                            "name": "Georgia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "de",
+                            "name": "Germany",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "gr",
+                            "name": "Greece",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "hu",
+                            "name": "Hungary",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "id",
+                            "name": "Indonesia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ie",
+                            "name": "Ireland",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "il",
+                            "name": "Israel",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "it",
+                            "name": "Italy",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "lv",
+                            "name": "Latvia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "lt",
+                            "name": "Lithuania",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "mt",
+                            "name": "Malta",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "mx",
+                            "name": "Mexico",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "nl",
+                            "name": "Netherlands",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "pl",
+                            "name": "Poland",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ro",
+                            "name": "Romania",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ru",
+                            "name": "Russia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "rs",
+                            "name": "Serbia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "sg",
+                            "name": "Singapore",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "sk",
+                            "name": "Slovakia",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "kr",
+                            "name": "South Korea",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "es",
+                            "name": "Spain",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "00",
+                            "name": "Streamland",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "se",
+                            "name": "Sweden",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ch",
+                            "name": "Switzerland",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "tw",
+                            "name": "Taiwan",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "tk",
+                            "name": "Turkey",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "ua",
+                            "name": "Ukraine",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "uk",
+                            "name": "United Kingdom",
+                            "__typename": "FilterValue"
+                        },
+                        {
+                            "value": "us",
+                            "name": "United States of America",
+                            "__typename": "FilterValue"
+                        }
+                    ],
+                    "__typename": "Aggregation"
+                }
+            ],
+            "__typename": "Listing"
+        }
+    }
+}
